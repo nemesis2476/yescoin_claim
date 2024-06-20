@@ -45,7 +45,7 @@ async function collectCoin() {
 
     while (true) {
         // Wait for a random time between 8 and 10 seconds
-        let delay = Math.random() * 60 + 10;
+        let delay = Math.random() * 5 + 7;
         let delayMilliseconds = delay * 1000;
 
         // Calculate the new score
