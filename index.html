@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collected Coins</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Collected Coins</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Score</th>
+                <th>Response Status</th>
+                <th>Response Text</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody id="coinData">
+            <!-- Data will be inserted here -->
+        </tbody>
+    </table>
+
+    <script>
+        async function fetchCoinData() {
+            try {
+                const response = await fetch('/data');
+                const data = await response.json();
+                const tableBody = document.getElementById('coinData');
+                tableBody.innerHTML = '';
+                data.forEach(item => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${item.score}</td>
+                        <td>${item.responseStatus}</td>
+                        <td>${item.responseText}</td>
+                        <td>${new Date(item.timestamp).toLocaleString()}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Error fetching coin data:', error);
+            }
+        }
+
+        // Fetch the coin data every 10 seconds
+        setInterval(fetchCoinData, 10000);
+
+        // Initial fetch
+        fetchCoinData();
+    </script>
+</body>
+</html>
