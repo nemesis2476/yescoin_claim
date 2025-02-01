@@ -36,8 +36,8 @@ async function collectCoin() {
         "Sec-Fetch-Dest": "empty",
         "Sec-Fetch-Mode": "cors",
         "Sec-Fetch-Site": "same-site",
-        "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMzIxMTk3MDEyIiwiY2hhdElkIjoiMTMyMTE5NzAxMiIsImlhdCI6MTcxODMzOTU1MiwiZXhwIjoxNzIwOTMxNTUyLCJyb2xlQXV0aG9yaXplcyI6W10sInVzZXJJZCI6MTgwMTI5MzA3MDM3MjkwMDg2NH0.VfBU3iahYgi_PQ58zQRlI6t3_cgtlsSeAtCjKzlQ58l63npVQ5ZTqOmRVsKgcMxc53JEllZXWbkh9M7Uh-_6-A",
-        "User-Agent": "Mozilla/5.0 (Linux; Android 14; POCO M2 Pro Build/AP1A.240405.002.A1; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/124.0.6367.179 Mobile Safari/537.36",
+        "token": "",
+        "User-Agent": "",
         "X-Requested-With": "org.telegram.messenger"
     };
 
